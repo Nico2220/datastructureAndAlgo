@@ -16,5 +16,3 @@ export function monotonicArray(array: number[]) {
 
   return true;
 }
-
-export function monotonicArray2(array: number[]) {}
