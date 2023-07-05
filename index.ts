@@ -1,5 +1,6 @@
 import { longestPeak } from "./longestPeak";
-import { monotonicArray, monotonicArray2 } from "./monotonicArray";
+import { monotonicArray } from "./monotonicArray";
+import { arrayOfProducts } from "./arrayOfProducts";
 // export function tournamentWinner(competitions: string[][], results: number[]) {
 //   // Write your code here.
 //   const resutlCompetions: { [key: string]: number } = {};
@@ -42,8 +43,11 @@ import { monotonicArray, monotonicArray2 } from "./monotonicArray";
 // tournamentWinner(competitions, results);
 
 // longestPeak([1, 2, 3, 3, 4, 0, 10, 6, 5, -1, -3, 2, 3]);
-const resultmonotonicArray2 = monotonicArray([
-  1, 1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 7, 9, 10, 11,
-]);
+// const resultmonotonicArray2 = monotonicArray([
+//   1, 1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 7, 9, 10, 11,
+// ]);
 
-console.log("resultmonotonicArray2=", resultmonotonicArray2);
+// console.log("resultmonotonicArray2=", resultmonotonicArray2);
+
+const r = arrayOfProducts([5, 1, 4, 2]);
+console.log(r);
