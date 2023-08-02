@@ -2,6 +2,8 @@ import { longestPeak } from "./longestPeak";
 import { monotonicArray } from "./monotonicArray";
 import { arrayOfProducts } from "./arrayOfProducts";
 import { fourNumberSum } from "./fourSum";
+import { mergeOverlappingIntervals } from "./merge_overlapping_Intervals";
+import { threeNumberSum } from "./threeNumberSum";
 // export function tournamentWinner(competitions: string[][], results: number[]) {
 //   // Write your code here.
 //   const resutlCompetions: { [key: string]: number } = {};
@@ -51,5 +53,13 @@ import { fourNumberSum } from "./fourSum";
 // console.log("resultmonotonicArray2=", resultmonotonicArray2);
 
 // const r = arrayOfProducts([5, 1, 4, 2]);
-const r = fourNumberSum([7, 6, 4, -1, 1, 2], 16);
+// const r = mergeOverlappingIntervals([
+//   [1, 2],
+//   [3, 5],
+//   [4, 7],
+//   [6, 8],
+//   [9, 10],
+// ]);
+
+const r = threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0);
 console.log(r);
