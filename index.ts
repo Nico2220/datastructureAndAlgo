@@ -4,6 +4,7 @@ import { arrayOfProducts } from "./arrayOfProducts";
 import { fourNumberSum } from "./fourSum";
 import { mergeOverlappingIntervals } from "./merge_overlapping_Intervals";
 import { threeNumberSum } from "./threeNumberSum";
+import { spiralTraverse } from "./spiralTraverse";
 // export function tournamentWinner(competitions: string[][], results: number[]) {
 //   // Write your code here.
 //   const resutlCompetions: { [key: string]: number } = {};
@@ -61,5 +62,10 @@ import { threeNumberSum } from "./threeNumberSum";
 //   [9, 10],
 // ]);
 
-const r = threeNumberSum([12, 3, 1, 2, -6, 5, -8, 6], 0);
+const r = spiralTraverse([
+  [1, 2, 3, 4],
+  [12, 13, 14, 5],
+  [11, 16, 15, 6],
+  [10, 9, 8, 7],
+]);
 console.log(r);
