@@ -1,22 +1,33 @@
 export function spiralTraverse(array: number[][]): number[] {
   const output: number[] = [];
-  const col = array[0].length;
-  const row = array.length;
 
-  for (let i = 0; i < col; i++) {
-    output.push(array[0][i]);
+  let startCol = 0;
+  let endCol = array[0].length - 1;
+
+  let startRow = 0;
+  let endRow = array.length - 1;
+
+  while (startRow < endRow && startCol < endCol) {
+    for (let i = startCol; i <= endCol; i++) {
+      output.push(array[startRow][i]);
+    }
+
+    for (let i = startRow + 1; i <= endRow; i++) {
+      output.push(array[i][endCol]);
+    }
+
+    for (let i = endCol - 1; i >= startCol; i--) {
+      output.push(array[endRow][i]);
+    }
+
+    for (let i = endRow - 1; i >= startRow + 1; i--) {
+      output.push(array[i][startCol]);
+    }
+    startRow++;
+    endRow--;
+    startCol++;
+    endCol--;
   }
 
-  for (let i = 1; i < row; i++) {
-    output.push(array[i][row - 1]);
-  }
-
-  for (let i = col - 2; i > -1; i--) {
-    output.push(array[row - 1][i]);
-  }
-
-  for (let i = row - 2; i > -0; i--) {
-    output.push(array[i][0]);
-  }
   return output;
 }
