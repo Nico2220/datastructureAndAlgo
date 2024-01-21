@@ -26,7 +26,7 @@ export function spiralTraverse(array: number[][]): number[] {
     startRow++;
     endRow--;
     startCol++;
-    endCol--;
+    endCol--;``
   }
 
   return output;
