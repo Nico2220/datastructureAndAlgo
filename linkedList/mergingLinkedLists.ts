@@ -67,6 +67,8 @@ export class LinkedList {
 //   return biggerCurrentNode;
 // }
 
+
+//O(n)
 export function mergingLinkedLists(
   linkedListOne: LinkedList,
   linkedListTwo: LinkedList
@@ -76,7 +78,7 @@ export function mergingLinkedLists(
 
   while (currentNodeOne !== currentNodeTwo) {
     if (currentNodeOne === null) {
-      currentNodeOne = currentNodeTwo;
+      currentNodeOne = linkedListTwo;
     } else {
       currentNodeOne = currentNodeOne.next;
     }
