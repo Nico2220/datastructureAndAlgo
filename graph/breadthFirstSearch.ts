@@ -35,7 +35,7 @@ export class Node {
     visited[this.name] = true;
 
     while (queue.length > 0) {
-      const current = queue.pop() as Node;
+      const current = queue.shift() as Node;
       array.push(current.name);
       for (const child of current.children) {
         if (!visited[child.name]) {
@@ -55,5 +55,5 @@ graph.children[2].addChild("G").addChild("H");
 graph.children[0].children[1].addChild("I").addChild("J");
 graph.children[2].children[0].addChild("K");
 
-console.log("r1", graph.breadthFirstSearch([]));
-console.log(graph.bfs([]));
+// console.log("r1", graph.breadthFirstSearch([]));
+console.log(graph.children[0]);
