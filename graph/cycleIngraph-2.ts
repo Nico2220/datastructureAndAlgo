@@ -1,9 +1,9 @@
 export function cycleInGraph(edges: number[][]) {
-  const visited = new Array(edges.length).fill(false);
-  const currentlyInStack = new Array(edges.length).fill(false);
+  const visited = edges.map((v) => false);
+  const currentlyInStack = edges.map((v) => false);
 
   for (let node = 0; node < edges.length; node++) {
-    if (visited[0]) continue;
+    if (visited[node]) continue;
 
     const isCycle = checkForCycle(node, edges, currentlyInStack, visited);
     if (isCycle) {
@@ -22,7 +22,6 @@ function checkForCycle(
 ) {
   visited[node] = true;
   currentlyInStack[node] = true;
-
   const neighbors = edges[node];
   for (let neighbor of neighbors) {
     if (!visited[neighbor]) {
@@ -32,18 +31,17 @@ function checkForCycle(
         currentlyInStack,
         visited
       );
-      // if (containCycle) {
-      //   return true;
-      // }
-    } else if (currentlyInStack[neighbor]) {
-      console.log(node);
+
+      if (containCycle) {
+        return true;
+      }
+    } else if (currentlyInStack[node]) {
       return true;
     }
   }
 
   currentlyInStack[node] = false;
-
   return false;
 }
 
-console.log(cycleInGraph([[1, 3], [2, 3, 4], [0], [], [2, 5], []]));
+cycleInGraph([[1, 3], [2, 3, 4], [0], [], [2, 5], []]);

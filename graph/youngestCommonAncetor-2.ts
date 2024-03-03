@@ -17,7 +17,7 @@ export function getYoungestCommonAncestor(
   let currentNodeOne: AncestralTree = descendantOne;
   let countLevelOne = 0;
   while (currentNodeOne != topAncestor) {
-    currentNodeOne = topAncestor.ancestor as AncestralTree;
+    currentNodeOne = currentNodeOne.ancestor as AncestralTree;
     countLevelOne++;
   }
 
@@ -42,7 +42,6 @@ export function getYoungestCommonAncestor(
     }
   }
 
-  return currentNodeOne === currentNodeTwo
-    ? currentNodeOne
-    : currentNodeOne.ancestor;
+  if(currentNodeOne === currentNodeTwo) return currentNodeOne
+
 }
