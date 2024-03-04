@@ -8,7 +8,7 @@ export function boggleBoard(board: string[][], words: string[]): string[] {
   const visited = board.map((row) => row.map((col) => false));
   for (let i = 0; i < board.length; i++) {
     for (let j = 0; i < board[i].length; i++) {
-      explore(i, j, board, trie.root, visited, finalWord);
+      explore(i, j, board, trie.root, visited, finalWords);
     }
   }
 
@@ -19,9 +19,12 @@ function explore(
   i: number,
   j: number,
   board: string[][],
+  trieNode: TrieNode,
   visited: boolean[][],
   finalWords: FinalWords
-);
+) {
+  if (visited[i][j]) return;
+}
 
 interface FinalWords {
   [key: string]: boolean;

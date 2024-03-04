@@ -55,7 +55,7 @@ function getSizeFromIsland(
 function getLandNeighbors(row: number, col: number, matrix: number[][]) {
   let neighbors: [number, number][] = [];
 
-  if (row > 0 && matrix[row - 1][col] !== 1) neighbors.push([row - 1, col]);
+  if (row > 0 && matrix[row - 1][col] == 1) neighbors.push([row - 1, col]);
   if (row < matrix.length - 1 && matrix[row + 1][col] !== 1)
     neighbors.push([row + 1, col]);
   if (col > 0 && matrix[row][col - 1] !== 1) neighbors.push([row, col - 1]);
