@@ -3,9 +3,7 @@ export function largestIsland(matrix: number[][]) {
   let largest = 0;
   for (let row = 0; row < matrix.length; row++) {
     for (let col = 0; col < matrix[row].length; col++) {
-      if (visited[row][col] || ) continue;
-
-    
+      if (visited[row][col]) continue;
 
       let currentLargest = findLargestIsland(row, col, matrix, visited);
 
@@ -39,7 +37,7 @@ function findLargestIsland(
       queue.push([row, col]);
       visited[row][col] = true;
       size++;
-    } 
+    }
   }
 
   return size;
