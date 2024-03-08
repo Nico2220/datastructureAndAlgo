@@ -55,4 +55,6 @@ export function postOrderTraverse(tree: BST | null, array: number[]) {
     const currentNode = stack2.pop()!;
     array.push(currentNode.value);
   }
+
+  return array;
 }

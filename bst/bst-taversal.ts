@@ -10,6 +10,7 @@ export class BST {
   }
 }
 
+// O(n)- time | O(n) space
 export function inOrderTraverse(tree: BST | null, array: number[]) {
   let currentNode = tree;
   if (currentNode == null) {
