@@ -29,3 +29,5 @@ function branchSumHelper(root: BinaryTree, sum: number, array: number[]) {
 
   return array;
 }
+
+function branchSumIterative(root: BinaryTree) {}
