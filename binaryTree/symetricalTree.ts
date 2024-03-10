@@ -11,25 +11,43 @@ export class BinaryTree {
   }
 }
 
+// export function symmetricalTree(tree: BinaryTree) {
+//   const stack1: Array<BinaryTree | null> = [tree.left];
+//   const stack2: Array<BinaryTree | null> = [tree.right];
+//   while (stack1.length > 0) {
+//     const left = stack1.pop()!;
+//     const right = stack2.pop()!;
+
+//     if (left === null && right === null) continue;
+
+//     if (left === null || right == null || left.value !== right.value) {
+//       return false;
+//     }
+
+//     stack1.push(left.left);
+//     stack1.push(left.right);
+
+//     stack2.push(right.right);
+//     stack2.push(right.left);
+//   }
+
+//   return true;
+// }
+
 export function symmetricalTree(tree: BinaryTree) {
-  const stack1: Array<BinaryTree | null> = [tree.left];
-  const stack2: Array<BinaryTree | null> = [tree.right];
-  while (stack1.length > 0) {
-    const left = stack1.pop()!;
-    const right = stack2.pop()!;
+  return isSymmetricalTree(tree.left, tree.right);
+}
 
-    if (left === null && right === null) continue;
-
-    if (left === null || right == null || left.value !== right.value) {
-      return false;
-    }
-
-    stack1.push(left.left);
-    stack1.push(left.right);
-
-    stack2.push(right.right);
-    stack2.push(right.left);
+function isSymmetricalTree(
+  left: BinaryTree | null,
+  right: BinaryTree | null
+): boolean {
+  if (left !== null && right !== null && left.value === right.value) {
+    return (
+      isSymmetricalTree(left.left, right.right) &&
+      isSymmetricalTree(left.right, right.left)
+    );
   }
 
-  return true;
+  return left === right;
 }
