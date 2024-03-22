@@ -35,27 +35,3 @@ export class BinaryTree {
 //   inOrderTraversal(tree.right, array);
 //   return array;
 // }
-
-export function findSuccessor(tree: BinaryTree, node: BinaryTree) {
-  if (node.right !== null) return getLeftMostChild(node.right);
-  return getRightmostParent(node);
-}
-
-function getLeftMostChild(node: BinaryTree) {
-  let currentNode: BinaryTree = node;
-  while (currentNode.left !== null) {
-    currentNode = currentNode.left;
-  }
-  return currentNode;
-}
-
-function getRightmostParent(node: BinaryTree) {
-  let currentNode = node;
-  while (
-    currentNode.parent !== null &&
-    currentNode.parent.right === currentNode
-  ) {
-    currentNode = currentNode.parent;
-  }
-  return currentNode.parent;
-}
